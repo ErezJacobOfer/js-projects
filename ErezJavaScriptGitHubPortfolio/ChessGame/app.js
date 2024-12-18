@@ -65,31 +65,42 @@ function dragOver(e){
 
 function dragDrop(e){
     e.stopPropagation()
-    console.log('e.target', e.target)
+    //console.log('e.target', e.target)
     const correctGo = draggedElement.firstChild.classList.contains(playerGo)
     const taken = e.target.classList.contains('piece')
+    const valid = checkIfValid(e.target)
     const opponentGo = playerGo === 'white' ? 'black' : 'white'
     const takenByOpponent = e.target.firstChild?.classList.contains(opponentGo)
     
     if (correctGo) {
-        // //must check this first
-        // if(takenByOpponent && valid){
-        //     e.target.parentNode.append(draggedElement)
-        //      e.target.remove()
-        //      changePlayer()
-        //      return
-        // } 
+        //must check this first
+        if(takenByOpponent && valid){
+            e.target.parentNode.append(draggedElement)
+             e.target.remove()
+             changePlayer()
+             return 
+        } 
         // then check this
         if (taken && !takenByOpponent) {
             infoDisplay.textContent = "you cannot go here!"
             setTimeout(() => infoDisplay.textContent = "", 2000)
             return
         } 
+        if(valid){
+           e.target.append(draggedElement)
+           changePlayer()
+           return
+
+        }
     }
     
    
-   
-    // e.target.append(draggedElement)
+   function checkIfValid(target){
+   const targetId = target.getAttribute('square-id') || target.parentNode.getAttribute('square-id')
+   console.log(targetId)
+
+   }
+    
    
 }
 
