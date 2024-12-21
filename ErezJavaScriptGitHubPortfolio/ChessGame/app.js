@@ -1,10 +1,12 @@
+//Selecting HTML elements
 const gameboard = document.querySelector("#gameboard");
 const playerDisplay = document.querySelector("#player");
 const infoDisplay = document.querySelector("#info-display");
+//Setting up the game variables
 const width = 8; 
 let playerGo = 'black'
 playerDisplay.textContent = 'black'
-
+//Setting up the initial game pieces
 const startPieces = [
     rook, knight, bishop, queen, king, bishop, knight, rook,
     pawn, pawn, pawn, pawn, pawn, pawn, pawn, pawn,
@@ -16,14 +18,17 @@ const startPieces = [
     rook, knight, bishop, queen, king, bishop, knight, rook,
 ]
 
+//setting up the board and placing the pieces
 function createBoard(){
-    startPieces.forEach((startPiece, i) => {
+    //startPiece was kinda confusing so I changed it to currentPiece
+    startPieces.forEach((currentPiece, i) => {
         const square = document.createElement('div')
         square.classList.add('square')
-        square.innerHTML = startPiece
+        square.innerHTML = currentPiece
         square.firstChild?.setAttribute('draggable', true)
         square.setAttribute('square-id', i)
         //square.classList.add('beige')
+        // setting the colors of the squares
         const row = Math.floor((63-i)/8) + 1
         if (row %2 === 0){
             square.classList.add(i % 2 === 0 ? "beige" : "brown")
@@ -31,6 +36,7 @@ function createBoard(){
         else {
             square.classList.add(i % 2 === 0 ? "brown" : "beige")
         }
+        // setting the colors of the pieces
         if ( i <= 15){
             square.firstChild.firstChild.classList.add('black')
         }
