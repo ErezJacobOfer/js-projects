@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App in Javascript | NepalCoding</title>
+    <!-- Linking Google Fonts for Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+
+</head>
+<body>
+    <!-- Quiz Configuration Container -->
+     <div class = "config-container">
+        <h2 class="config-title">Quiz Configuration</h2>
+
+        <div class="config-option">
+            <h4 class="option-title">Select Category</h4> 
+            <div class="category-options">
+            <button class="category-option active">Programming</button>
+            <button class="category-option">Geography</button>
+            <button class="category-option">Mathematics</button>
+            <button class="category-option">Entertainment</button>
+        
+            </div>
+        </div>
+    
+   
+        <div class="config-option">
+            <h4 class="option-title">No. of Questions</h4> 
+            <div class="question-options">
+            <button class="question-option">5</button>
+            <button class="question-option active">10</button>
+            <button class="question-option">15</button>
+            <button class="question-option">20</button>
+            <button class="question-option">25</button>
+            </div>
+        </div>
+        <button class="start-quiz-btn">Start Quiz</button>
+    </div>
+    
+    <!-- Quiz Container -->
+    <div class="quiz-container">
+        <header class="quiz-header">
+        <h2 class="quiz-title">Quiz Application</h2>
+        <div class="quiz-timer">
+        <span class="material-symbols-rounded">timer</span>
+            <p class="time-duration">15s</p>
+        </div>
+        </header>
+
+        <div class="quiz-content">
+        <h1 class="quiz-question">In Javascript, how do you create a function?</h1>
+        <ul class="answer-options"></ul>
+            <li class="answer-option">
+                <p>create function myFunction()</p>
+            </li>
+            <li class="answer-option">
+                <p>function myFunction()</p>
+                <span class="material-symbols-rounded">check_circle</span>
+            </li>
+            <li class="answer-option">
+                <p>def function myFunction()</p>
+                <span class="material-symbols-rounded">cancel</span>
+
+            </li>
+            <li class="answer-option">
+                <p>func myFunction()</p>
+            </li>
+        </ul>
+        </div>
+
+        <div class="quiz-footer">
+            <p class="question-status"><b>2</b> of <b>10</b> Questions</p>
+            <button class="next-question-btn">Next
+            <span class="material-symbols-rounded">arrow_right_alt</span></button>
+        </div>
+
+    
+    
+    </div>
+</body>
+</html>
